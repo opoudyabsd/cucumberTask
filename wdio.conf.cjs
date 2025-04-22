@@ -1,3 +1,4 @@
+require("events").defaultMaxListeners = 20;
 exports.config = {
   //
   // ====================
@@ -20,7 +21,12 @@ exports.config = {
   // The path of the spec files will be resolved relative from the directory of
   // of the config file unless it's absolute.
   //
-  specs: ["./src/features/**/*.feature"],
+  specs: [
+    "./src/features/editProfile.feature",
+    "./src/features/signup_in.feature",
+  ],
+  //"./src/features/**/*.feature"
+  // ./src/features/editProfile.feature"
   // Patterns to exclude.
   exclude: [
     // 'path/to/excluded/files'
@@ -41,7 +47,7 @@ exports.config = {
   // and 30 processes will get spawned. The property handles how many capabilities
   // from the same test should run tests.
   //
-  maxInstances: 10,
+  maxInstances: 2,
   //
   // If you have trouble getting all important capabilities together, check out the
   // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -71,7 +77,7 @@ exports.config = {
   // Define all options that are relevant for the WebdriverIO instance here
   //
   // Level of logging verbosity: trace | debug | info | warn | error | silent
-  logLevel: "error",
+  logLevel: "info",
   //
   // Set specific log levels per logger
   // loggers:
@@ -139,7 +145,10 @@ exports.config = {
   // If you are using Cucumber you need to specify the location of your step definitions.
   cucumberOpts: {
     // <string[]> (file/dir) require files before executing features
-    require: ["./src/step-definitions/signUp_In.js"],
+    require: [
+      "./src/step-definitions/editProfile.js",
+      "./src/step-definitions/signUp_In.js",
+    ],
     // <boolean> show full backtrace for errors
     backtrace: false,
     // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
@@ -177,8 +186,7 @@ exports.config = {
    * @param {object} config wdio configuration object
    * @param {Array.<Object>} capabilities list of capabilities details
    */
-  // onPrepare: function (config, capabilities) {
-  // },
+  // onPrepare: function (config, capabilities) {},
   /**
    * Gets executed before a worker process is spawned and can be used to initialize specific service
    * for that worker as well as modify runtime environments in an async fashion.
@@ -188,8 +196,7 @@ exports.config = {
    * @param  {object} args     object that will be merged with the main configuration once worker is initialized
    * @param  {object} execArgv list of string arguments passed to the worker process
    */
-  // onWorkerStart: function (cid, caps, specs, args, execArgv) {
-  // },
+  // onWorkerStart: function (cid, caps, specs, args, execArgv) {},
   /**
    * Gets executed just after a worker process has exited.
    * @param  {string} cid      capability id (e.g 0-0)
@@ -207,8 +214,7 @@ exports.config = {
    * @param {Array.<String>} specs List of spec file paths that are to be run
    * @param {string} cid worker id (e.g. 0-0)
    */
-  // beforeSession: function (config, capabilities, specs, cid) {
-  // },
+  // beforeSession: function (config, capabilities, specs, cid) {},
   /**
    * Gets executed before test execution begins. At this point you can access to all global
    * variables like `browser`. It is the perfect place to define custom commands.

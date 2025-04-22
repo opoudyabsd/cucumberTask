@@ -5,6 +5,10 @@ import { Given, When, Then } from "@wdio/cucumber-framework";
 import { expect, $, browser } from "@wdio/globals";
 const signUpPage = new SignUpPage();
 const signInPage = new SignInPage();
+import { Before } from "@cucumber/cucumber";
+Before(async function () {
+  await browser.maximizeWindow();
+});
 Given("User is on the {string} page", async (url) => {
   await browser.url(signUpPage.signUpUrl(url));
 });
