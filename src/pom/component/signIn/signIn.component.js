@@ -1,4 +1,3 @@
-// import { getVerificationCode } from "../../../utils/emailUtils";
 import { getVerificationCode } from "../../../utils/emailUtils";
 class SignInComponent {
   get userName() {
@@ -17,7 +16,7 @@ class SignInComponent {
     return $('[data-testid="otp-input-index-0"]');
   }
   async setEmail(value) {
-    await this.userName.waitForDisplayed();
+    await this.userName.waitForDisplayed({ timeout: 30000 });
     await this.userName.setValue(value);
   }
   async setPassword(value) {

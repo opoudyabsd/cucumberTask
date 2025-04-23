@@ -2,10 +2,11 @@ import { Given, When, Then } from "@wdio/cucumber-framework";
 import { expect, $, browser } from "@wdio/globals";
 import { loginToTrello } from "../utils/authHelper";
 import EditProfilePage from "../pom/page/editProfilePage";
-import { Before } from "@cucumber/cucumber";
 
 const editProfilePage = new EditProfilePage();
 Given("User is already logged in", async () => {
+  await browser.reloadSession();
+
   await loginToTrello();
 });
 Then("User already on the {string} page", async (title) => {

@@ -23,7 +23,8 @@ exports.config = {
   //
   specs: [
     // "./src/features/signup_in.feature",
-    "./src/features/boards.feature",
+    // "./src/features/boards.feature",
+    "./src/features/searching.feature",
     // "./src/features/editProfile.feature",
   ],
   //"./src/features/**/*.feature"
@@ -153,7 +154,9 @@ exports.config = {
     // <string[]> (file/dir) require files before executing features
     require: [
       // "./src/step-definitions/signUp_In.js",
-      "./src/step-definitions/boards.js",
+      // "./src/step-definitions/boards.js",
+      "./src/step-definitions/searching.js",
+
       // "./src/step-definitions/editProfile.js",
     ],
     // <boolean> show full backtrace for errors

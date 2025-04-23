@@ -1,4 +1,3 @@
-console.log("--- Loading step definitions from signUp_In.js ---");
 import SignUpPage from "../pom/page/signUpPage";
 import SignInPage from "../pom/page/signInPage";
 import { Given, When, Then } from "@wdio/cucumber-framework";
