@@ -3,9 +3,7 @@ import { expect, $, browser } from "@wdio/globals";
 import { loginToTrello } from "../utils/authHelper";
 import EditProfilePage from "../pom/page/editProfilePage";
 import { Before } from "@cucumber/cucumber";
-Before(async function () {
-  await browser.maximizeWindow();
-});
+
 const editProfilePage = new EditProfilePage();
 Given("User is already logged in", async () => {
   await loginToTrello();

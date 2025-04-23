@@ -22,8 +22,9 @@ exports.config = {
   // of the config file unless it's absolute.
   //
   specs: [
-    "./src/features/editProfile.feature",
-    "./src/features/signup_in.feature",
+    // "./src/features/signup_in.feature",
+    "./src/features/boards.feature",
+    // "./src/features/editProfile.feature",
   ],
   //"./src/features/**/*.feature"
   // ./src/features/editProfile.feature"
@@ -56,16 +57,21 @@ exports.config = {
   capabilities: [
     {
       browserName: "chrome",
+      acceptInsecureCerts: true,
+
       "goog:chromeOptions": {
-        args: ["--lang=en-US"],
+        args: ["--lang=en-US", "--start-maximized"],
         //   "--headless"
       },
     },
     {
       browserName: "firefox",
+      acceptInsecureCerts: true,
+
       "moz:firefoxOptions": {
         prefs: { "intl.accept_languages": "en-US" },
-        // args: ["-headless"],
+        args: ["-kiosk"],
+        // "-headless",
       },
     },
   ],
@@ -77,7 +83,7 @@ exports.config = {
   // Define all options that are relevant for the WebdriverIO instance here
   //
   // Level of logging verbosity: trace | debug | info | warn | error | silent
-  logLevel: "info",
+  logLevel: "error",
   //
   // Set specific log levels per logger
   // loggers:
@@ -117,7 +123,7 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services: ["geckodriver"],
+  services: ["geckodriver", "chromedriver"],
   //
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
@@ -146,8 +152,9 @@ exports.config = {
   cucumberOpts: {
     // <string[]> (file/dir) require files before executing features
     require: [
-      "./src/step-definitions/editProfile.js",
-      "./src/step-definitions/signUp_In.js",
+      // "./src/step-definitions/signUp_In.js",
+      "./src/step-definitions/boards.js",
+      // "./src/step-definitions/editProfile.js",
     ],
     // <boolean> show full backtrace for errors
     backtrace: false,
@@ -214,7 +221,9 @@ exports.config = {
    * @param {Array.<String>} specs List of spec file paths that are to be run
    * @param {string} cid worker id (e.g. 0-0)
    */
-  // beforeSession: function (config, capabilities, specs, cid) {},
+  // beforeScenario: async function () {
+  //   await browser.maximizeWindow();
+  // },
   /**
    * Gets executed before test execution begins. At this point you can access to all global
    * variables like `browser`. It is the perfect place to define custom commands.

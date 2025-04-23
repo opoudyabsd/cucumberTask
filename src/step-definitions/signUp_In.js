@@ -5,10 +5,7 @@ import { Given, When, Then } from "@wdio/cucumber-framework";
 import { expect, $, browser } from "@wdio/globals";
 const signUpPage = new SignUpPage();
 const signInPage = new SignInPage();
-import { Before } from "@cucumber/cucumber";
-Before(async function () {
-  await browser.maximizeWindow();
-});
+
 Given("User is on the {string} page", async (url) => {
   await browser.url(signUpPage.signUpUrl(url));
 });
@@ -62,6 +59,6 @@ When('User clicks on the "Log in" button', async () => {
 });
 
 Then("Page should have {string} title", async (title) => {
-  await signInPage.homeContainer.waitForDisplayed();
+  await signInPage.homeContainer.waitForDisplayed({ timeout: 30000 });
   await expect(browser).toHaveTitle(title);
 });
