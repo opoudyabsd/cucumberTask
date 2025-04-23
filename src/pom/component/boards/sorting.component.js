@@ -11,9 +11,9 @@ class SortingComponent {
   get byCardNameButton() {
     return $(".js-sort-by-card-name");
   }
-  get cardNameElements() {
-    return $$('[data-testid="card-name"]');
-  }
+  // get cardNameElements() {
+  //   return $$('[data-testid="card-name"]');
+  // }
   async getDisplayedCardNames() {
     const cardNames = [];
     const cards = await $$('[data-testid="card-name"]');

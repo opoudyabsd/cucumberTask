@@ -13,9 +13,6 @@ class SearchPage {
   titleBoardSelector(value) {
     return $(`//div[@role="presentation"]//*[text()="${value}"]`);
   }
-  get advanceSeachHeader() {
-    return $(".cQqOsGGJ_UfxYQ");
-  }
 }
 
 export default SearchPage;

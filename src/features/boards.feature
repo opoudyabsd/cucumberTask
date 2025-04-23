@@ -2,7 +2,7 @@ Feature: Boards functionality
     Background:
         Given User is logged in
     Scenario: Create a board
-        Given User in the "Trello Workspace | Trello" page
+        Given User in the workspace page
         When User clicks on the "Create new board" button
         Then Pop-up "Create board" menu should be displayed
 

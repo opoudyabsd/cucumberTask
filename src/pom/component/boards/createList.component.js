@@ -1,5 +1,3 @@
-import { faker } from "@faker-js/faker";
-
 class CreateListComponent {
   get addListForm() {
     return $(".oe8RymzptORQ7h");
@@ -7,9 +5,9 @@ class CreateListComponent {
   get listNameForm() {
     return $(".oe8RymzptORQ7h");
   }
-  get createdList() {
-    return $('[data-testid="list-wrapper"]');
-  }
+  // get createdList() {
+  //   return $('[data-testid="list-wrapper"]');
+  // }
   get createListButton() {
     return $('[data-testid="list-composer-add-list-button"]');
   }
@@ -19,7 +17,6 @@ class CreateListComponent {
 
   checkListName(value) {
     return $(`//h2[@data-testid="list-name" and contains(text(), '${value}')]`);
-    // Fresh Bamboo Towels
   }
 }
 export default CreateListComponent;

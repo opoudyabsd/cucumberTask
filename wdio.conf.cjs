@@ -1,4 +1,4 @@
-require("events").defaultMaxListeners = 20;
+require("events").EventEmitter.defaultMaxListeners = 20;
 exports.config = {
   //
   // ====================
@@ -24,8 +24,9 @@ exports.config = {
   specs: [
     // "./src/features/signup_in.feature",
     // "./src/features/boards.feature",
-    "./src/features/searching.feature",
-    // "./src/features/editProfile.feature",
+    // "./src/features/searching.feature",
+    // "./src/features/editWorkspace.feature",
+    "./src/features/editProfile.feature",
   ],
   //"./src/features/**/*.feature"
   // ./src/features/editProfile.feature"
@@ -155,9 +156,9 @@ exports.config = {
     require: [
       // "./src/step-definitions/signUp_In.js",
       // "./src/step-definitions/boards.js",
-      "./src/step-definitions/searching.js",
-
-      // "./src/step-definitions/editProfile.js",
+      // "./src/step-definitions/searching.js",
+      // "./src/step-definitions/editWorkspace.js",
+      "./src/step-definitions/editProfile.js",
     ],
     // <boolean> show full backtrace for errors
     backtrace: false,

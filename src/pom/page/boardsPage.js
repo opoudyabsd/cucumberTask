@@ -49,8 +49,8 @@ class BoardsPage {
   }
 
   // Sorting cards
-  get pageWithCards(){
-    return "/b/ttFih5hH/my-trello-board"
+  get pageWithCards() {
+    return "/b/ttFih5hH/my-trello-board";
   }
   get cardsList() {
     return $('[data-testid="list-cards"]');
@@ -60,9 +60,6 @@ class BoardsPage {
   }
   get listEditMenuButton() {
     return $('[data-testid="list-edit-menu-button"]');
-  }
-  get sortedMessage() {
-    return $(".QMKgZFIlTLiEJN");
   }
 }
 

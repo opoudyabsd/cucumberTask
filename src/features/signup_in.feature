@@ -7,7 +7,7 @@ Feature: Trello authorization
     Then User should be redirected to the "Create your first Workspace | Trello" page
     And The page should display a "What brings you here today?" message
 
-  Scenario: Successful  Sign in
+  Scenario: Successful Sign in
     Given User opens the "login" page
     When User enters a valid registered "<email>"
     And User clicks on the "Log in" button for openning password field
@@ -16,5 +16,6 @@ Feature: Trello authorization
     Then Page should have "Boards | Trello" title
 
     Examples:
-  | email                                          | password                | 
-  | born-swim@aprtds8r.mailosaur.net               | newPassword_123         | 
+      | email                                    | password        |
+      | born-swim@aprtds8r.mailosaur.net        | newPassword_123 |
+

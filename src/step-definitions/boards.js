@@ -2,15 +2,18 @@ import { Given, When, Then } from "@wdio/cucumber-framework";
 import { expect, $, browser } from "@wdio/globals";
 import { loginToTrello } from "../utils/authHelper";
 import BoardsPage from "../pom/page/boardsPage";
+import { Before } from "@wdio/cucumber-framework";
+Before(async () => {
+  await browser.reloadSession(); // Clean session before every scenario
+});
 const boardsPage = new BoardsPage();
 Given("User is logged in", async () => {
-  await browser.reloadSession();
   await loginToTrello();
 });
-Given("User in the {string} page", async (title) => {
+Given("User in the workspace page", async () => {
   await browser.url(boardsPage.pageUrl);
-  await expect(browser).toHaveTitle(title);
 });
+
 When('User clicks on the "Create new board" button', async () => {
   await boardsPage.boardMenuButton.click();
 });

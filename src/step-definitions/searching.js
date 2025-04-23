@@ -2,10 +2,13 @@ import { Given, When, Then } from "@wdio/cucumber-framework";
 import { expect, $, browser } from "@wdio/globals";
 import { loginToTrello } from "../utils/authHelper";
 import SearchPage from "../pom/page/searchingPage";
+import { Before } from "@wdio/cucumber-framework";
+Before(async () => {
+  await browser.reloadSession(); // Clean session before every scenario
+});
 const searchPage = new SearchPage();
-Given("User should be logged in", async () => {
-  await browser.reloadSession();
 
+Given("User should be logged in", async () => {
   await loginToTrello();
 });
 Given("User is on the {string} page", async (title) => {
