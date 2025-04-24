@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@faker-js/faker": "^9.7.0",
+    "@wdio/cli": "^9.12.7",
     "chromedriver": "^135.0.2",
     "mailosaur": "^8.8.1"
   }
