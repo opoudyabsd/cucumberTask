@@ -1,3 +1,4 @@
+@authorization
 Feature: Trello authorization
 
   Scenario: Successful Sign up

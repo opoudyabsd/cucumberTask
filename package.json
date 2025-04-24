@@ -4,7 +4,12 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "npx wdio run ./wdio.conf.cjs"
+    "test": "npx wdio run ./src/config/wdio.conf.cjs",
+    "searching": "npx wdio run ./src/config/wdio.conf.cjs --cucumberOpts.tagExpression='@searching'",
+    "boards": "npx wdio run ./src/config/wdio.conf.cjs --cucumberOpts.tagExpression='@boards'",
+    "profile": "npx wdio run ./src/config/wdio.conf.cjs --cucumberOpts.tagExpression='@profile'",
+    "workspace": "npx wdio run ./src/config/wdio.conf.cjs --cucumberOpts.tagExpression='@workspace'",
+    "authorization": "npx wdio run ./src/config/wdio.conf.cjs --cucumberOpts.tagExpression='@authorization'"
   },
   "keywords": [],
   "author": "",

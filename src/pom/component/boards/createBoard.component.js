@@ -9,6 +9,7 @@ class CreateBoardComponent {
     return $('[data-testid="create-board-submit-button"]');
   }
   async newBoard(title) {
+    await this.titleForm.waitForDisplayed({ timeout: 30000 });
     await this.titleForm.setValue(title);
   }
 }

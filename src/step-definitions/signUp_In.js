@@ -2,10 +2,6 @@ import SignUpPage from "../pom/page/signUpPage";
 import SignInPage from "../pom/page/signInPage";
 import { Given, When, Then } from "@wdio/cucumber-framework";
 import { expect, $, browser } from "@wdio/globals";
-import { Before } from "@wdio/cucumber-framework";
-Before(async () => {
-  await browser.reloadSession(); // Clean session before every scenario
-});
 
 const signUpPage = new SignUpPage();
 const signInPage = new SignInPage();

@@ -1,3 +1,4 @@
+@boards
 Feature: Boards functionality
     Background:
         Given User is logged in
@@ -8,7 +9,7 @@ Feature: Boards functionality
 
         When User enters a board "<title>" into "Board title" form
         And User clicks on the "Create" button
-        Then User should be redirected to the ""<title>" | Trello" page
+        Then User should be redirected to the '"<title>" | Trello' page
         And New board with specified "<title>" should be created
     Examples:
     | title                      |
@@ -28,7 +29,7 @@ Feature: Boards functionality
     | Listik               |
 
     Scenario: Creating a cart for an existing list
-        When User on the existing board page
+        When User should be on the existing board page
         Then The empty list is created
 
         When User clicks on the "Add a card" button under existing list

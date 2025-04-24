@@ -1,6 +1,7 @@
+@workspace
 Feature: Workspace
     Background:
-        Given User is logged in
+        Given User should be logged in trello
         And User is on the boards section
 
     Scenario: Edit workspace

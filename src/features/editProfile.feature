@@ -1,3 +1,4 @@
+@profile
 Feature: Edit Atlassian User Profile
 
   Background:

@@ -1,7 +1,8 @@
+@searching
 Feature: Searching functionality
     Background:
         Given User should be logged in
-        And User is on the "Boards | Trello" page
+        And User should have the "Boards | Trello" title on the page
 
     Scenario: Search for existing board
         When User clicks on the search form at the navigation section

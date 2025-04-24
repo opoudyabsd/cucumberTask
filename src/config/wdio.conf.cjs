@@ -1,4 +1,4 @@
-require("events").EventEmitter.defaultMaxListeners = 20;
+require("events").EventEmitter.defaultMaxListeners = 100;
 exports.config = {
   //
   // ====================
@@ -22,13 +22,14 @@ exports.config = {
   // of the config file unless it's absolute.
   //
   specs: [
-    // "./src/features/signup_in.feature",
-    // "./src/features/boards.feature",
-    // "./src/features/searching.feature",
-    // "./src/features/editWorkspace.feature",
-    "./src/features/editProfile.feature",
+    // "./src/features/**.feature",
+    "../features/signup_in.feature",
+    "../features/boards.feature",
+    "../features/searching.feature",
+    "../features/editWorkspace.feature",
+    "../features/editProfile.feature",
   ],
-  //"./src/features/**/*.feature"
+
   // ./src/features/editProfile.feature"
   // Patterns to exclude.
   exclude: [
@@ -72,7 +73,7 @@ exports.config = {
 
       "moz:firefoxOptions": {
         prefs: { "intl.accept_languages": "en-US" },
-        args: ["-kiosk"],
+        // args: ["-kiosk"],
         // "-headless",
       },
     },
@@ -154,14 +155,17 @@ exports.config = {
   cucumberOpts: {
     // <string[]> (file/dir) require files before executing features
     require: [
-      // "./src/step-definitions/signUp_In.js",
-      // "./src/step-definitions/boards.js",
-      // "./src/step-definitions/searching.js",
-      // "./src/step-definitions/editWorkspace.js",
+      "./src/step-definitions/signUp_In.js",
+      "./src/step-definitions/boards.js",
+      "./src/step-definitions/searching.js",
+      "./src/step-definitions/editWorkspace.js",
       "./src/step-definitions/editProfile.js",
     ],
     // <boolean> show full backtrace for errors
     backtrace: false,
+    failAmbiguousDefinitions: true,
+    // to catch multiple step definitions
+
     // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
     requireModule: [],
     // <boolean> invoke formatters without executing steps
@@ -293,7 +297,8 @@ exports.config = {
    * @param {number}                 result.duration  duration of scenario in milliseconds
    * @param {object}                 context          Cucumber World object
    */
-  // afterScenario: function (world, result, context) {
+  // afterScenario: async function (world, result, context) {
+  //   await browser.deleteSession();
   // },
   /**
    *
@@ -320,8 +325,10 @@ exports.config = {
    * @param {Array.<Object>} capabilities list of capabilities details
    * @param {Array.<String>} specs List of spec file paths that ran
    */
-  // after: function (result, capabilities, specs) {
+  // after: async function () {
+  //   await browser.deleteSession(); // ✅ works as-is
   // },
+
   /**
    * Gets executed right after terminating the webdriver session.
    * @param {object} config wdio configuration object
