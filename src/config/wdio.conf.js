@@ -1,5 +1,7 @@
-require("events").EventEmitter.defaultMaxListeners = 100;
-exports.config = {
+import { EventEmitter } from "events";
+
+EventEmitter.defaultMaxListeners = 100;
+export const config = {
   //
   // ====================
   // Runner Configuration

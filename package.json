@@ -4,12 +4,12 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "npx wdio run ./src/config/wdio.conf.cjs",
-    "searching": "npx wdio run ./src/config/wdio.conf.cjs --cucumberOpts.tagExpression='@searching'",
-    "boards": "npx wdio run ./src/config/wdio.conf.cjs --cucumberOpts.tagExpression='@boards'",
-    "profile": "npx wdio run ./src/config/wdio.conf.cjs --cucumberOpts.tagExpression='@profile'",
-    "workspace": "npx wdio run ./src/config/wdio.conf.cjs --cucumberOpts.tagExpression='@workspace'",
-    "authorization": "npx wdio run ./src/config/wdio.conf.cjs --cucumberOpts.tagExpression='@authorization'",
+    "test": "npx wdio run ./src/config/wdio.conf.js",
+    "searching": "npx wdio run ./src/config/wdio.conf.js --cucumberOpts.tagExpression='@searching'",
+    "boards": "npx wdio run ./src/config/wdio.conf.js --cucumberOpts.tagExpression='@boards'",
+    "profile": "npx wdio run ./src/config/wdio.conf.js --cucumberOpts.tagExpression='@profile'",
+    "workspace": "npx wdio run ./src/config/wdio.conf.js --cucumberOpts.tagExpression='@workspace'",
+    "authorization": "npx wdio run ./src/config/wdio.conf.js --cucumberOpts.tagExpression='@authorization'",
     "lint": "eslint ."
   },
   "keywords": [],
