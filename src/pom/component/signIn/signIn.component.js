@@ -24,16 +24,14 @@ class SignInComponent {
     await this.password.setValue(value);
   }
   async checkForCodeVerification() {
+    // eslint-disable-next-line wdio/no-pause
     await browser.pause(2000);
     const isVerificationRequired =
       await this.verificationCodeExist.isExisting();
-    console.log(isVerificationRequired);
-    console.log("bibij123");
     if (isVerificationRequired) {
-      console.log("kukaracha");
+      // eslint-disable-next-line wdio/no-pause
       await browser.pause(2000);
       const verificationCode = await getVerificationCode();
-      console.log(verificationCode);
       await this.verificationCodeForm.setValue(verificationCode);
     }
   }

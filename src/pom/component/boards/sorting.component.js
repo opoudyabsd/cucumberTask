@@ -23,7 +23,7 @@ class SortingComponent {
       cardNames.push(name);
     }
     cardNames.sort();
-    console.log(`${cardNames} DEBIIIIIIIIIIIIIIIIIIIIIIIIIL`);
+    // eslint-disable-next-line wdio/no-pause
     await browser.pause(1000);
     return cardNames;
   }

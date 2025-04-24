@@ -1,5 +1,5 @@
 import { Given, When, Then } from "@wdio/cucumber-framework";
-import { expect, $, browser } from "@wdio/globals";
+import { expect, browser } from "@wdio/globals";
 import { loginToTrello } from "../utils/authHelper";
 import WorkspacePage from "../pom/page/workspacePage";
 const workspacePage = new WorkspacePage();

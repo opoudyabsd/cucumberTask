@@ -12,8 +12,10 @@ class SignUpComponent {
   }
 
   async handleCaptcha() {
-    await browser.pause(5000); // To check if CAPTCHA is exist
+    // eslint-disable-next-line wdio/no-pause
+    await browser.pause(5000);
     if (await this.captchaElement.isExisting()) {
+      // eslint-disable-next-line wdio/no-pause
       await browser.pause(40000);
       await this.submitButton.click();
     }
